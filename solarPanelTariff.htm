@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+  <title>Solar Panel Tariff Calculator</title>
+  <!-- <link rel="stylesheet" type="text/css" href="css/calc.css" />  -->
+  <link href="twitter-bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet" />
+
+  <script type="text/javascript" src="js/calculation.js"></script>
+  <style>
+     select {width:150px;}
+     input  {width: 150px;}
+     table  {border-style: none;}
+  </style>
+
+<!-- all code, html, css, javascript written and copyright C Davies 03/11/2010 www.chris-davies.com   except for twitter-bootstrap obviously -->
+
+</head>
+
+<body>
+<div id="calc">
+<form name="SolarCalc">
+<table class="">
+<th colspan="6" id="color3">The Annual Estimated Energy Yield</th>
+  <tr>
+      <td colspan="6" id="color2">
+         Please make your selection from the direction of roof list box, then use the angle and shading list boxes and press the calculate button.
+      </td>
+  </tr>
+  <tr>
+    <td id="color3">Direction of Roof</td>
+    <td id="color3">Angle of Roof    </td>
+    <td id="color3"> System Size     </td>
+    <td id="color3">Amount of Shade  </td>
+    <td id="color3">kWh/Year         </td>
+    <td id="color3">Calculate        </td>
+   </tr>
+   <tr>
+     <td>
+        <select name="facingWall" onChange="PopulateList();">
+           <option value="0">Select Below</option>
+           <option value="1"> South      </option>
+           <option value="2"> SE/SW      </option>
+           <option value="3"> E/W        </option>
+           <option value="4"> NE/NW      </option>
+           <option value="5"> North      </option>
+        </select>
+     </td>
+     <td>
+      <select name="tiltAngle" size="1">
+        <option>             </option>
+      </select>
+     </td>
+     <td>
+        <select name="systemSize">
+           <option value="1">   1   </option>
+           <option value="1.5"> 1.5 </option>
+           <option value="2">   2   </option>
+           <option value="2.5"> 2.5 </option>
+           <option value="3">   3   </option>
+           <option value="3.5"> 3.5 </option>
+           <option value="4">   4   </option>
+        </select>
+     </td>
+     <td>
+        <select name="overShading">
+              <option value="0.5" >Heavy              </option>
+              <option value="0.65">Significant        </option>
+              <option value="0.8" >Modest             </option>
+              <option value="1"   >None or Very Little</option>
+        </select>
+     </td>
+       <td style="padding-left:20px;">
+         <input type="text" name="input01" value="" size="8"/>
+      </td>
+      <td>
+      <input type="button" class="btn btn-primary" onClick="solarPanelCalculation()" value="Calculate"/>
+   </td>
+     </tr>
+     <tr>
+       <td colspan="4">kWh/year        x FIT Rate        equals annual FIT Return</td>
+       <td colspan="2">&pound; <input type="text" name="input02" value="" size="8"/></td>
+     </tr>
+     <tr>
+        <td colspan="4">kWh/year  /2 x 0.03p equals export return</td>
+        <td colspan="2">&pound; <input type="text" name="input03" value="" size="8"/></td>
+     </tr>
+     <tr>
+        <td colspan="4">kWh/year /2 x0.12p (which is current price of electricity)</td>
+        <td colspan="2">&pound; <input type="text" name="input04" value="" size="8"/></td>
+     </tr>
+     <tr>
+        <td colspan="4">Total Annual Return </td>
+        <td colspan="2">&pound; <input type="text" name="input05" value="" size="8"/></td>
+     </tr>
+  </table>
+</form>
+</div>
+
+
+
+
+
+</body>
+
+</html>
