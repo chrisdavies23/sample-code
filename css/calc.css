@@ -1,16 +1,17 @@
    /*   Code copyright C Davies 03/11/2010 www.chris-davies.com  */
 
 body {
+    background-image: url('../images/stripe.gif');
          font-family: arial,sans-serif;
            font-size: 12px;
 }
 
-table {
+table {     position: relative;
               border: 1px none black;
-             padding: 10px;
-               width: 700px;
+               width: 690px;
               margin: auto;
           background: #b6fbe5;
+                left: -7px;
 }
 
 th  {
@@ -46,9 +47,11 @@ input  {      width: 120px;
              border: 1px none blue;
               width: 940px;
                left: 19px;
+       padding-left: 0;
 }
 
 #container {
+         background: #fff;
              border: 1px none #000;
               width: 70%;
              margin: auto;
