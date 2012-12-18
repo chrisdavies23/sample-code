@@ -3,12 +3,11 @@
 <head>
 <meta charset="utf-8">
   <title>Solar Panel Tariff Calculator</title>
-
-  <link href="twitter-bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="css/calc.css" />
-  <script type="text/javascript" src="js/calculation.js"></script>
-  <!-- overwrite some bootstrap css -->
-  <!-- make IE compliant code, in other words different stylesheet for Microsoft -->
+         <link href="twitter-bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet" />
+         <link rel="stylesheet" type="text/css" href="css/calc.css" />
+         <script type="text/javascript" src="js/calculation.js"></script>
+<!-- overwrite some bootstrap css -->
+<!-- different style for Internet Explorer -->
 <!--[if IE]>
 <style type="text/css">
 .span6 {     position: relative;
@@ -27,22 +26,14 @@ table     {left: -13px;}
      please see separate Configurator.xsl file for algorithm on which the javascript (calculation.js) is based        -->
 
 </head>
-
 <body>
 <div id="container">
 <div><h3 style="padding: 10px;"><a class="other" href="index.php"> HOME </a> | <a class="other" href="about.php"> ABOUT </a> | <a class="other" href="portfolio.php"> PORTFOLIO </a>
  | <a class="other" href="tutorial.php"> TUTORIALS </a> | <a class="other" href="sitemap.php"> SITEMAP </a></h3></div>
 <div><img src="images/greenEnergyLogo3.jpg" width="100%"/>  </div>
-<div style="padding: 20px;text-align:justify;"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ornare varius convallis.
- tortor dui, auctor vitae adipiscing vel, tempus at nulla.
-Fusce aliquam, lacus eget fermentum euismod, mi purus porta ligula, non placerat erat leo vitae mi.
-Integer pellentesque enim at dui scelerisque sed lacinia nunc placerat. Fusce condimentum, nibh at tincidunt varius, enim turpis dapibus augue,
-ut ornare metus est et sem. Curabitur quam tellus, egestas nec cursus ac, congue a ipsum.
-Vivamus ut tellus sed tellus interdum tempor nec in urna. Fusce lectus lorem, posuere vel iaculis quis, bibendum eu turpis.
-Phasellus laoreet cursus nisl, sed porttitor lacus rhoncus at. Morbi sed lacus dui, eu porttitor dui.
- Mauris elementum erat quis dui malesuada ac tempor risus pretium.</p>
+<div style="padding: 20px;text-align:justify;">
 
- <p> The above text just for demonsrational purposes. The Feeder tariff below is based upon the industry standard algorithm - 0.8 x kWp x S x Zpv - which takes into
+ <p>The Feeder tariff below is based upon the industry standard algorithm - 0.8 x kWp x S x Zpv - which takes into
  account the direction of the roof, the tilt angle of the roof, the amount of shade in the proximity and the number of solr panels required. This was coded in
  javscript and demonstrates how versatile javascript really is.
  </p>
@@ -53,7 +44,7 @@ Phasellus laoreet cursus nisl, sed porttitor lacus rhoncus at. Morbi sed lacus d
       <div class="span6">
          <form name="SolarCalc" class="well">
             <table>
-               <th class="color3" colspan="6">Solar Panel Feeder Tariff - Example of javascript application to calculate savings made by the installation of solar panels</th>
+               <th class="color1" colspan="6">Solar Panel Feeder Tariff - Example of javascript application to calculate savings made by the installation of solar panels</th>
                  <tr>
                     <td class="color2" colspan="6">
                        Please make your selection from the direction of roof list box, then use the angle,
