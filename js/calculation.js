@@ -1,28 +1,37 @@
-     //
-     //
-     //   Code copyright C Davies 03/11/2010
-     //    www.chris-davies.com
-     //
-     //    Use this code at your own risk!
-     //
-     //    You are free to use this code as long as the comment
-     //    herein is left intact.
-     //
-     //    This code is not guaranteed fit for any particular purpose
-     //    and no responsibility will be or is implied for its use.
-     //
-     //
-     //
+/**************************************************************************
+*                                                                         *
+*   Code copyright C Davies 03/11/2011                                    *
+*    www.chris-davies.com                                                 *
+*                                                                         *
+*    Use this code at your own risk!                                      *
+*                                                                         *
+*   You are free to use this code as long as the comment                  *
+*    herein is left intact.                                               *
+*                                                                         *
+*    This code is not guaranteed fit for any particular purpose           *
+*    and no responsibility will be or is implied for its use.             *
+*                                                                         *
+*    The code here allows a user to see how much money the user can save  *
+*    if they install solar panels.                                        *
+*    The algorithm used - 0.8 x kWp x S x Zpv - is an industry standard   *
+*    and takes into account the direction of the roof, the angle of tilt  *
+*    of the roof, the amount of shade that is available and the number    *
+*    solar panels that may be installed. The applicaiton is designed      *
+*    so the user can select the dropdown select boxes to achieve their    *
+*    required result, full instructions are given on HTML the page itself.*
+*                                                                         *
+*                                                                         *
+***************************************************************************/
 
 function PopulateList() {
-
+    var angleList;
     angleList = document.SolarCalc.facingWall;
 
    // Clear out the list  then set second list depending on value of first list
 
    ClearOptions(document.SolarCalc.tiltAngle);
 
-   if (angleList[angleList.selectedIndex].value == "1") {
+   if (angleList[angleList.selectedIndex].value === "1") {
       AddToOptionList(document.SolarCalc.tiltAngle, "1042", "30");
       AddToOptionList(document.SolarCalc.tiltAngle, "1023", "45");
       AddToOptionList(document.SolarCalc.tiltAngle, "960", "60");
@@ -30,7 +39,7 @@ function PopulateList() {
       AddToOptionList(document.SolarCalc.tiltAngle, "933", "horizontal");
    }
 
-   if (angleList[angleList.selectedIndex].value == "2") {
+   if (angleList[angleList.selectedIndex].value === "2") {
       AddToOptionList(document.SolarCalc.tiltAngle, "997", "30");
       AddToOptionList(document.SolarCalc.tiltAngle, "968", "45");
       AddToOptionList(document.SolarCalc.tiltAngle, "900", "60");
@@ -38,7 +47,7 @@ function PopulateList() {
       AddToOptionList(document.SolarCalc.tiltAngle, "933", "horizontal");
    }
 
-   if (angleList[angleList.selectedIndex].value == "3") {
+   if (angleList[angleList.selectedIndex].value === "3") {
       AddToOptionList(document.SolarCalc.tiltAngle, "886", "30");
       AddToOptionList(document.SolarCalc.tiltAngle, "829", "45");
       AddToOptionList(document.SolarCalc.tiltAngle, "753", "60");
@@ -46,7 +55,7 @@ function PopulateList() {
       AddToOptionList(document.SolarCalc.tiltAngle, "933", "horizontal");
    }
 
-   if (angleList[angleList.selectedIndex].value == "4") {
+   if (angleList[angleList.selectedIndex].value === "4") {
       AddToOptionList(document.SolarCalc.tiltAngle, "762", "30");
       AddToOptionList(document.SolarCalc.tiltAngle, "666", "45");
       AddToOptionList(document.SolarCalc.tiltAngle, "580", "60");
@@ -54,7 +63,7 @@ function PopulateList() {
       AddToOptionList(document.SolarCalc.tiltAngle, "933", "horizontal");
    }
 
-      if (angleList[angleList.selectedIndex].value == "5") {
+      if (angleList[angleList.selectedIndex].value === "5") {
       AddToOptionList(document.SolarCalc.tiltAngle, "709", "30");
       AddToOptionList(document.SolarCalc.tiltAngle, "621", "45");
       AddToOptionList(document.SolarCalc.tiltAngle, "486", "60");
@@ -63,8 +72,9 @@ function PopulateList() {
    }
 }
 
-  function ClearOptions(OptionList) {
+function ClearOptions(OptionList) {
 
+   var x;
    // Always clear an option list from the last entry to the first
    for (x = OptionList.length; x >= 0; x--) {
       OptionList[x] = null;
@@ -79,7 +89,8 @@ function AddToOptionList(OptionList, OptionValue, OptionText) {
   // Round to 2 decimal places
 
 function r2(n) {
-
+  var ans;
+  var len;
   ans = n * 1000;
   ans = Math.round(ans /10) + "";
   while (ans.length < '3')
@@ -91,8 +102,19 @@ function r2(n) {
              return ans;
 }
 
-function solarPanelCalculation()
-{
+function solarPanelCalculation(){
+         var selectedTilt;
+         var tiltAngle;
+         var selectedShade;
+         var overShading;
+         var panels;
+         var systemSize;
+         var total;
+         var annualFIT;
+         var exportReturn;
+         var currentPrice;
+
+
          selectedTilt   = document.SolarCalc.tiltAngle.selectedIndex;
          tiltAngle      = document.SolarCalc.tiltAngle.options[selectedTilt].value;
          selectedShade  = document.SolarCalc.overShading.selectedIndex;
@@ -101,8 +123,7 @@ function solarPanelCalculation()
          systemSize     = document.SolarCalc.systemSize.options[panels].value;
 
          total =  0.8 * systemSize *  tiltAngle * overShading;
-         //test value of total
-         // alert (total);
+
          window.document.SolarCalc.input01.value = r2(total);
          window.document.SolarCalc.input02.value = r2(total * 0.413);
          window.document.SolarCalc.input03.value = r2((total)/2 * 0.03);
