@@ -34,8 +34,8 @@ table     {left: -13px;}
 <div style="padding: 20px;text-align:justify;">
 
  <p>The Feeder tariff below is based upon the industry standard algorithm - 0.8 x kWp x S x Zpv - which takes into
- account the direction of the roof, the tilt angle of the roof, the amount of shade in the proximity and the number of solr panels required. This was coded in
- javscript and demonstrates how versatile javascript really is.
+ account the direction of the roof, the tilt angle of the roof, the amount of shade in the proximity and the number of solar panels required. The user should
+  select from direction of roof and work across the list boxes inorder, then click the calculate button.
  </p>
 
 
@@ -61,7 +61,7 @@ table     {left: -13px;}
                 </tr>
                 <tr>
                     <td>
-                        <select name="facingWall" onChange="PopulateList();">
+                        <select name="facingWall" onChange="populateList();">
                         <option value="0">Select Below</option>
                         <option value="1"> SOUTH      </option>
                         <option value="2"> SE/SW      </option>

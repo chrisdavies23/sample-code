@@ -22,73 +22,77 @@
 *                                                                         *
 *                                                                         *
 ***************************************************************************/
+/*global populateList, solarPanelCalculation*/
 
-function PopulateList() {
+function populateList() {
+    "use strict";
     var angleList;
     angleList = document.SolarCalc.facingWall;
 
    // Clear out the list  then set second list depending on value of first list
 
-   ClearOptions(document.SolarCalc.tiltAngle);
+   clearOptions(document.SolarCalc.tiltAngle);
 
    if (angleList[angleList.selectedIndex].value === "1") {
-      AddToOptionList(document.SolarCalc.tiltAngle, "1042", "30");
-      AddToOptionList(document.SolarCalc.tiltAngle, "1023", "45");
-      AddToOptionList(document.SolarCalc.tiltAngle, "960", "60");
-      AddToOptionList(document.SolarCalc.tiltAngle, "724", "vertical");
-      AddToOptionList(document.SolarCalc.tiltAngle, "933", "horizontal");
+      addToOptionList(document.SolarCalc.tiltAngle, "1042", "30");
+      addToOptionList(document.SolarCalc.tiltAngle, "1023", "45");
+      addToOptionList(document.SolarCalc.tiltAngle, "960", "60");
+      addToOptionList(document.SolarCalc.tiltAngle, "724", "vertical");
+      addToOptionList(document.SolarCalc.tiltAngle, "933", "horizontal");
    }
 
    if (angleList[angleList.selectedIndex].value === "2") {
-      AddToOptionList(document.SolarCalc.tiltAngle, "997", "30");
-      AddToOptionList(document.SolarCalc.tiltAngle, "968", "45");
-      AddToOptionList(document.SolarCalc.tiltAngle, "900", "60");
-      AddToOptionList(document.SolarCalc.tiltAngle, "684", "vertical");
-      AddToOptionList(document.SolarCalc.tiltAngle, "933", "horizontal");
+      addToOptionList(document.SolarCalc.tiltAngle, "997", "30");
+      addToOptionList(document.SolarCalc.tiltAngle, "968", "45");
+      addToOptionList(document.SolarCalc.tiltAngle, "900", "60");
+      addToOptionList(document.SolarCalc.tiltAngle, "684", "vertical");
+      addToOptionList(document.SolarCalc.tiltAngle, "933", "horizontal");
    }
 
    if (angleList[angleList.selectedIndex].value === "3") {
-      AddToOptionList(document.SolarCalc.tiltAngle, "886", "30");
-      AddToOptionList(document.SolarCalc.tiltAngle, "829", "45");
-      AddToOptionList(document.SolarCalc.tiltAngle, "753", "60");
-      AddToOptionList(document.SolarCalc.tiltAngle, "565", "vertical");
-      AddToOptionList(document.SolarCalc.tiltAngle, "933", "horizontal");
+      addToOptionList(document.SolarCalc.tiltAngle, "886", "30");
+      addToOptionList(document.SolarCalc.tiltAngle, "829", "45");
+      addToOptionList(document.SolarCalc.tiltAngle, "753", "60");
+      addToOptionList(document.SolarCalc.tiltAngle, "565", "vertical");
+      addToOptionList(document.SolarCalc.tiltAngle, "933", "horizontal");
    }
 
    if (angleList[angleList.selectedIndex].value === "4") {
-      AddToOptionList(document.SolarCalc.tiltAngle, "762", "30");
-      AddToOptionList(document.SolarCalc.tiltAngle, "666", "45");
-      AddToOptionList(document.SolarCalc.tiltAngle, "580", "60");
-      AddToOptionList(document.SolarCalc.tiltAngle, "427", "vertical");
-      AddToOptionList(document.SolarCalc.tiltAngle, "933", "horizontal");
+      addToOptionList(document.SolarCalc.tiltAngle, "762", "30");
+      addToOptionList(document.SolarCalc.tiltAngle, "666", "45");
+      addToOptionList(document.SolarCalc.tiltAngle, "580", "60");
+      addToOptionList(document.SolarCalc.tiltAngle, "427", "vertical");
+      addToOptionList(document.SolarCalc.tiltAngle, "933", "horizontal");
    }
 
       if (angleList[angleList.selectedIndex].value === "5") {
-      AddToOptionList(document.SolarCalc.tiltAngle, "709", "30");
-      AddToOptionList(document.SolarCalc.tiltAngle, "621", "45");
-      AddToOptionList(document.SolarCalc.tiltAngle, "486", "60");
-      AddToOptionList(document.SolarCalc.tiltAngle, "360", "vertical");
-      AddToOptionList(document.SolarCalc.tiltAngle, "933", "horizontal");
+      addToOptionList(document.SolarCalc.tiltAngle, "709", "30");
+      addToOptionList(document.SolarCalc.tiltAngle, "621", "45");
+      addToOptionList(document.SolarCalc.tiltAngle, "486", "60");
+      addToOptionList(document.SolarCalc.tiltAngle, "360", "vertical");
+      addToOptionList(document.SolarCalc.tiltAngle, "933", "horizontal");
    }
 }
 
-function ClearOptions(OptionList) {
-
+function clearOptions(OptionList) {
+   "use strict";
    var x;
    // Always clear an option list from the last entry to the first
-   for (x = OptionList.length; x >= 0; x--) {
+   for (x = OptionList.length - 1; x >= 0; x--) {
       OptionList[x] = null;
    }
 }
 
-function AddToOptionList(OptionList, OptionValue, OptionText) {
+function addToOptionList(OptionList, OptionValue, OptionText) {
    // Add option to the bottom of the list
+   "use strict";
    OptionList[OptionList.length] = new Option(OptionText, OptionValue);
 }
 
   // Round to 2 decimal places
 
 function r2(n) {
+  "use strict";
   var ans;
   var len;
   ans = n * 1000;
@@ -103,6 +107,7 @@ function r2(n) {
 }
 
 function solarPanelCalculation(){
+        "use strict";
          var selectedTilt;
          var tiltAngle;
          var selectedShade;
