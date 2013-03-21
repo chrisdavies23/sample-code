@@ -22,7 +22,7 @@
 *                                                                         *
 *                                                                         *
 ***************************************************************************/
-/*global populateList, solarPanelCalculation*/
+
 
 function populateList() {
     "use strict";
