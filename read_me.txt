@@ -1,0 +1,3 @@
+Forgot to mention, for the date search code to work, you're gonna need a MySQL database table called dateTest, with ID as primary key int(10), date as date and dbDate as a timestamp.
+
+Also here is solarPanelTariff.htm - something I coded for a web designer friend, it uses an industry standard algorithm (see configurator.mht), to calculate savings for a potential customer based on how many panels they install, the direction of the roof, the angle of the roof and the amount of shade present. The .js file is in the errrmmmm .js folder.

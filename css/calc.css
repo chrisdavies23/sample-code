@@ -1,0 +1,59 @@
+/*   Code copyright C Davies 03/11/2010 www.chris-davies.com  */
+
+body {
+    background-image: url('../images/nasty_fabric.gif');
+         font-family: arial,sans-serif;
+           font-size: 12px;
+}
+
+table {     position: relative;
+              border: 1px none black;
+               width: 690px;
+              margin: auto;
+          background: #61d7a4;
+                left: -7px;
+}
+
+th  {
+              border: 1px none black;
+             padding: 10px;
+
+}
+
+td  {
+              border: 1px none black;
+             padding: 10px;
+               width: 150px;
+}
+
+.color1 { background: #00af64;
+}
+
+.color2 { background: #36d792;
+}
+
+.color3 { background: #62d99c;
+        padding-left: 25px;
+}
+
+select {       width: 145px;
+}
+
+input  {       width: 120px;
+}
+
+.span6 {    position: relative;
+              margin: auto;
+              border: 1px none blue;
+               width: 940px;
+                left: 20px;
+        padding-left: 0;
+}
+
+#container {
+          background: #fff;
+              border: 1px none #000;
+               width: 70%;
+              margin: auto;
+
+}

@@ -1,0 +1,2 @@
+Yo peeps,
+Forgot to mention, for the date search code to work, you're gonna need a MySQL database table called dateTest, with ID as primary key int(10), date as date and dbDate as a timestamp.
